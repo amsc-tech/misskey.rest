@@ -3799,7 +3799,7 @@ export interface Locale extends ILocale {
     /**
      * パスワードが間違っています。
      */
-    "incorrectPassword": string;
+    "incorrectPasswordorUsername": string;
     /**
      * 「{choice}」に投票しますか？
      */
