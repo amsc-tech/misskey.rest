@@ -10,12 +10,12 @@ on:
         type: boolean
   push:
     branches:
-      - 'master-kakurega'
+      - 'rest-master'
     paths:
       - 'package.json'
 
 env:
-  REGISTRY_IMAGE: ghcr.io/${{ github.repository_owner }}/kakurega.app
+  REGISTRY_IMAGE: ghcr.io/${{ github.repository_owner }}/misskey.rest
   DEVELOP_BRANCH_NAME: dev
 
 jobs:

@@ -8,10 +8,8 @@
 [Learn more](https://misskey-hub.net/)
 
 --- 
-
-<img src="./assets/kakurega.png" alt="Kakurega logo" style="margin-bottom:16px" width="128"/>  
   
-このリポジトリはMisskeyサーバー「[隠れ家](https://misskey.yukineko.me)」で使用している本家Misskeyのフォークです。  
+このリポジトリはmisskey.restで使用しているMisskeyの「[隠れ家](https://misskey.yukineko.me)」フォームをmisskey.rest用に変更したフォークです。  
 詳細については[こちらのドキュメント](./docs/index.md)をご覧ください。  
   
 Dockerを用いたセットアップ方法は[こちら](./docs/setup/docker.md)

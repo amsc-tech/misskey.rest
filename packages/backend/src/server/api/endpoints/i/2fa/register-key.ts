@@ -25,7 +25,7 @@ export const meta = {
 		},
 
 		incorrectPassword: {
-			message: 'Incorrect password.',
+			message: 'Incorrect password or username.',
 			code: 'INCORRECT_PASSWORD',
 			id: '38769596-efe2-4faf-9bec-abbb3f2cd9ba',
 		},

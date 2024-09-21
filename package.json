@@ -1,10 +1,10 @@
 {
 	"name": "misskey",
-	"version": "2024.8.0-kakurega.1.39.1",
+	"version": "2024.8.0-rest.1",
 	"codename": "nasubi",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/hideki0403/misskey.git"
+		"url": "https://github.com/amsc-tech/misskey.rest.git"
 	},
 	"packageManager": "pnpm@9.6.0",
 	"workspaces": [
