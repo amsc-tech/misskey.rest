@@ -5,7 +5,7 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 <template>
 <div :class="$style.codeBlockRoot">
-	<button :class="$style.codeBlockCopyButton" class="_button" @click="copy">
+	<button v-if="copyButton" :class="$style.codeBlockCopyButton" class="_button" @click="copy">
 		<i class="ti ti-copy"></i>
 	</button>
 	<Suspense>
@@ -32,12 +32,18 @@ import { i18n } from '@/i18n.js';
 import { getDataSaverState } from '@/scripts/datasaver.js';
 import { copyToClipboard } from '@/scripts/copy-to-clipboard.js';
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
 	code: string;
+	forceShow?: boolean;
+	copyButton?: boolean;
 	lang?: string;
-}>();
+}>(), {
+	copyButton: true,
+	forceShow: false,
+});
 
 const show = ref(!getDataSaverState('code'));
+const show = ref(props.forceShow === true ? true : !defaultStore.state.dataSaver.code);
 
 const XCode = defineAsyncComponent(() => import('@/components/MkCode.core.vue'));
 
@@ -82,7 +88,7 @@ function copy() {
 	width: 100%;
 	border: none;
 	outline: none;
-  font: inherit;
+	font: inherit;
 	cursor: pointer;
 
 	box-sizing: border-box;

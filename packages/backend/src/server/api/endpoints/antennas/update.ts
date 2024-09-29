@@ -32,11 +32,15 @@ export const meta = {
 			code: 'NO_SUCH_USER_LIST',
 			id: '1c6b35c9-943e-48c2-81e4-2844989407f7',
 		},
-
 		noUsers: {
 			message: 'Users are required.',
 			code: 'NO_USERS',
 			id: 'b57de435-7800-4635-aed0-6b7a049bdcf6',
+		},
+		emptyKeyword: {
+			message: 'Either keywords or excludeKeywords is required.',
+			code: 'EMPTY_KEYWORD',
+			id: '721aaff6-4e1b-4d88-8de6-877fae9f68c4',
 		},
 	},
 
@@ -91,7 +95,7 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 		super(meta, paramDef, async (ps, me) => {
 			if (ps.keywords && ps.excludeKeywords) {
 				if (ps.keywords.flat().every(x => x === '') && ps.excludeKeywords.flat().every(x => x === '')) {
-					throw new Error('either keywords or excludeKeywords is required.');
+					throw new ApiError(meta.errors.emptyKeyword);
 				}
 			}
 

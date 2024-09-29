@@ -35,6 +35,12 @@ export const meta = {
 			id: 'faf47050-e8b5-438c-913c-db2b1576fde4',
 		},
 
+		emptyKeyword: {
+			message: 'Either keywords or excludeKeywords is required.',
+			code: 'EMPTY_KEYWORD',
+			id: '53ee222e-1ddd-4f9a-92e5-9fb82ddb463a',
+		},
+
 		noKeywords: {
 			message: 'Keywords are required.',
 			code: 'NO_KEYWORDS',
@@ -98,6 +104,10 @@ export default class extends Endpoint<typeof meta, typeof paramDef> { // eslint-
 		private globalEventService: GlobalEventService,
 	) {
 		super(meta, paramDef, async (ps, me) => {
+			if (ps.keywords.flat().every(x => x === '') && ps.excludeKeywords.flat().every(x => x === '')) {
+				throw new ApiError(meta.errors.emptyKeyword);
+			}
+
 			if (ps.src === 'all' && ps.keywords.map(x => x.filter(k => k)).filter(x => x.length).length === 0) {
 				throw new ApiError(meta.errors.noKeywords);
 			}
