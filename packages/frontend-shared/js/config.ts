@@ -7,7 +7,7 @@ import type { Locale } from '../../../locales/index.js';
 
 const overrideAddress = localStorage.getItem('overrideAddress');
 // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-const address = overrideAddress ? new URL(document.querySelector<HTMLMetaElement>('meta[property="instance_url"]')?.content || location.href);
+const address = overrideAddress ? new URL(overrideAddress) : new URL(document.querySelector<HTMLMetaElement>('meta[property="instance_url"]')?.content || location.href);
 const siteName = document.querySelector<HTMLMetaElement>('meta[property="og:site_name"]')?.content;
 
 export const host = address.host;
