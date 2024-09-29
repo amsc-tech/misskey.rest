@@ -26,6 +26,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 import * as os from '@/os.js';
 import MkButton from '@/components/MkButton.vue';
 import { version } from '@/config.js';
+import MkSparkle from '@/components/MkSparkle.vue';
+import { version } from '@@/js/config.js';
 import { i18n } from '@/i18n.js';
 
 const emit = defineEmits<{
