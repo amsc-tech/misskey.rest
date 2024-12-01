@@ -1,3 +1,5 @@
+# Important: This fork is archived because misskey.rest server gone.
+
 <div align="center">
 <a href="https://misskey-hub.net">
 	<img src="./assets/title_float.svg" alt="Misskey logo" style="border-radius:50%" width="300"/>
